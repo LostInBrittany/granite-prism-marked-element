@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>granite-prism-marked-element demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../granite-prism-marked-element.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic granite-prism-marked-element demo</h3>
+
+      <demo-snippet>
+        <template>
+          <granite-prism-marked-element>
+              <script type="text/markdown">
+                # Does it works?
+      
+                I am not sure! 
+    
+                Let's test
+      
+                ```html
+                <div>There is no div here</div>
+                <i>
+                  console.log('And no log');
+                </i>
+                ```
+
+                **Yes it works!**
+              </script>
+              </script>
+          </granite-prism-marked-element>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

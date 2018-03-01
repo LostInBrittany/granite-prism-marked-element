@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../marked-element/marked-element.html">
+<link rel="import" href="../prism-element/prism-highlighter.html">
+<link rel="import" href="../prism-element/prism-theme-default.html">
+
+<dom-module id="granite-prism-marked-element">
+  <template>
+    <style  include="prism-theme-default">
+      :host {
+        display: block;
+      }
+      pre {
+        padding: 16px;
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+      }
+    </style>
+    <prism-highlighter></prism-highlighter>
+    <slot name="markdown-html">
+      <div id="content"></div>
+    </slot>
+  </template>
+
+  <script>
+    /**
+     * `granite-prism-marked-element`
+     * An element extending marked-element with encapsulated prism-element and
+     * prism-theme-default to be more easily used in non-polymer apps
+     * See https://www.webcomponents.org/element/PolymerElements/marked-element for more info
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class GranitePrismMarkedElement extends window.customElements.get('marked-element') {
+      static get is() { return 'granite-prism-marked-element'; }
+      static get properties() {
+        return {};
+      }
+    }
+
+    window.customElements.define(GranitePrismMarkedElement.is, GranitePrismMarkedElement);
+  </script>
+</dom-module>
