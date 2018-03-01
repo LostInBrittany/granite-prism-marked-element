@@ -75,4 +75,4 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ## License
 
-[Apache Licence, Version 2.0](https://opensource.org/licenses/Apache-2.0)
+[MIT](https://opensource.org/licenses/mit)
