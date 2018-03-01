@@ -18,7 +18,7 @@
         border-radius: 3px;
       }
     </style>
-    <prism-highlighter></prism-highlighter>
+    <prism-highlighter languages="[[languages]]"></prism-highlighter>
     <slot name="markdown-html">
       <div id="content"></div>
     </slot>
@@ -38,7 +38,14 @@
     class GranitePrismMarkedElement extends window.customElements.get('marked-element') {
       static get is() { return 'granite-prism-marked-element'; }
       static get properties() {
-        return {};
+        return {
+          languages: {
+            type: Object,
+            value: function() {
+              return {};
+            },
+          },
+        };
       }
     }
 

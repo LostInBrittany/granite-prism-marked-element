@@ -1,49 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>granite-prism-marked-element demo</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+  <title>granite-prism-marked-element demo</title>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../granite-prism-marked-element.html">
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
 
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-      </style>
-    </custom-style>
-  </head>
-  <body>
-    <div class="vertical-section-container centered">
-      <h3>Basic granite-prism-marked-element demo</h3>
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../granite-prism-marked-element.html">
 
-      <demo-snippet>
-        <template>
-          <granite-prism-marked-element>
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </custom-style>
+</head>
+
+<body>
+  <div class="vertical-section-container centered">
+    <h3>Basic granite-prism-marked-element demo</h3>
+
+    <demo-snippet>
+      <template>
+        <granite-prism-marked-element languages='[[languages]]'>
+          <script type="text/markdown">
+                  # Does it works?
+        
+                  I am not sure! 
+      
+                  Let's test
+        
+                  ```html
+                  <div>There is no div here</div>
+                  <i>
+                    console.log('And no log');
+                  </i>
+                  ```
+                    
+                  **Yes it works!**
+                </script>
+        </granite-prism-marked-element>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <dom-bind id="bindingDemo1">
+          <template>
+            <granite-prism-marked-element languages='[[languages]]'>
               <script type="text/markdown">
-                # Does it works?
+                      # Does it works?
+            
+                      I am not sure! 
+          
+                      Let's test
       
-                I am not sure! 
-    
-                Let's test
+                      ```warpscript
+                      [ 0 'toto' ]
+                      ```
       
-                ```html
-                <div>There is no div here</div>
-                <i>
-                  console.log('And no log');
-                </i>
-                ```
+                      **Yes it works!**
+                    </script>
+            </granite-prism-marked-element>
+          </template>
+        </dom-bind>
 
-                **Yes it works!**
-              </script>
-              </script>
-          </granite-prism-marked-element>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
+        <script>
+          let elem = document.querySelector('#bindingDemo1');
+          console.log(elem)
+          elem.languages = { warpscript: Prism.languages.clike }
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+
 </html>
